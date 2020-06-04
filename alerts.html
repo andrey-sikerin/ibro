@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      
+        Infinite JS dialogs. Page locking with infinite alerts
+      
+    </title>
+    
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/css/bootstrap.min.css' />
+<link rel='stylesheet' href='/css/bootstrap-theme.min.css' />
+<link rel='stylesheet' href='/css/style.css' />
+<script src="/js/jquery-1.9.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+  </head>
+  <body>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-9">
+  <h1>
+    Infinite JS dialogs. Page locking with infinite alerts
+  </h1>
+  <p>
+    Бесконечно отображается модальный диалог (при закрытии появляется новый) с длинным содержимым (в надежде, что кнопки окажутся за пределами экрана).
+  </p>
+  <p><a class="btn btn-primary btn-lg" role="button" onclick="infinite_alert()">Alert</a></p>
+  <p><a class="btn btn-primary btn-lg" role="button" onclick="infinite_confirm()">Confirm</a></p>
+  <p><a class="btn btn-primary btn-lg" role="button" onclick="infinite_prompt()">Prompt</a></p>
+  <script type="text/javascript">
+    var text = "Подготовка командировки завершена. " +
+"По возвращении из командировки вам будет нужно в течение 3-х рабочих дней сдать в бухгалтерию (кому именно?) использованные ж/д билеты (распечатанные электронные билеты), посадочные талоны, а также счёт из гостиницы, если вы оплачиваете отель сами. " +
+"Перед началом командировки (за 1-2 дня) вас пригласят в отдел кадров (если вы в Москве или в Санкт-Петербурге) или к администратору вашего офиса для подписания необходимых документов. " +
+"Если оформили электронную регистрацию на авиарейс – обязательно напечатайте посадочный талон. Электронные билеты на поезд нужно распечатывать и показывать проводнику при посадке в поезд вместе с документом, удостоверяющим личность, указанным при покупке электронного билета. " +
+"Круглосуточный телефон агентства для срочной замены авиабилетов в нерабочее время и в выходные дни: для Москвы и РФ регионов кроме Санкт-Петербурга – 7 (916) 452-15-74 (агентство \"КМП\"), для Санкт-Петербурга – 7 (812) 703-42-85 (Агентство \"Карлсон\"). " +
+"Железнодорожные билеты необходимо сдавать/менять или самостоятельно в кассах вокзала или через менеджера, подготовившего вашу командировку. На время зарубежной командировки необходимо иметь при себе международную медицинскую страховку. " +
+"Business trip preparation is completed. " +
+"After returning from a business trip within 3 working days you should give to the accountant department (to whom?) the train tickets, boarding passes and a hotel bill if you pay the accommodation by your credit card. " +
+"Before starting the trip (1-2 days) you will be invited a visit HR department (for Moscow or St. Petersburg) or the reception of your office. " +
+"If you have made electronic registration you’d better print your boarding pass in advance. You should also print electronic train tickets and show them together with your passport to the conductor while getting the train. " +
+"If you have to change airline tickets during off hours or on week end you should call the travel agency directly. Moscow and other cities of Russia – 7 (916) 452-15-74 (KMP group), Saint Petersburg – 7 (812) 703-42-85 (Carlson Wagonlit Travel). " +
+"You should submit or change your train tickets yourself in ticket offices or via the manager who prepare your trip. During the foreign trip it is necessary to have international medical insurance.?";
+
+    function infinite_alert() {
+      while(true) {
+        alert(text);
+      }
+    }
+    
+    function infinite_confirm() {
+      while(true) {
+        confirm(text);
+      }
+    }
+    
+    function infinite_prompt() {
+      while(true) {
+        prompt(text, "Телефон");
+      }
+    }
+  </script>
+</div>
+      </div>
+  </body>
+</html>
+  
