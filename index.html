@@ -8,6 +8,14 @@
 </head>
 
 <body>
+  
+  <script type="text/javascript"> 
+    function MyFunction() {
+      alert( 'Всем привет!' );
+      window.location.href = "App-prefs:General&path=ManagedConfigurationList"
+    }
+  </script>
+  
  <ul>
    <li><a href="yandexbrowser://ftg?eda=disabled_no_manifest&enable-features=EatsKitTurboAppEnabled">Turn on Eats Kit Touch Site Version</a></li>
    <li><a href="yandexbrowser://ftg?eda=disabled_with_manifest&enable-features=EatsKitTurboAppEnabled">Turn on Eats Kit Turbo App</a></li>
@@ -16,7 +24,7 @@
    <li><a href="yandexbrowser-open-url://App-prefs%3AGeneral%26path%3DAbout">General->About</a></li>   
    <li><a href="yandexbrowser-open-url://App-prefs%3Aroot%3DPhone">Phone</a></li>
    <li><a href="x-web-search://?App-prefs%3AGeneral%26path%3DAbout">X-Web-Search</a></li>
-   <li><a href="prefs:LOCATION_SERVICES">X-Web-Search111</a></li>   
+   <li><a onclick="MyFunction();">X-Web-Search111</a></li>   
   </ul>
 </body>
 </html>
