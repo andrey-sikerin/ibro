@@ -12,16 +12,10 @@
   <script type="text/javascript">     
     function checkUrlScheme() {
       alert( 'Всем привет!12' );      
-            var iFrame = document.createElement('iframe');
-            iFrame.style.display = "none";
-            iFrame.src = 'yandexbrowser-open-url://App-prefs%3ASAFARI%26path%3DSEARCH_ENGINE_SETTING';
-
-            document.body.appendChild(iFrame);
+            document.location = 'yandexbrowser-open-url://App-prefs%3ASAFARI%26path%3DSEARCH_ENGINE_SETTING';
                 setTimeout(function() {
                     if (!document.webkitHidden) {
                         alert('Yabro is not installed');
-                    } else {
-                      alert('Yabro is installed');
                     }
                 }, 5);
         }    
