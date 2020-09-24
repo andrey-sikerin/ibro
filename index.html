@@ -14,6 +14,22 @@
       alert( 'Всем привет!12' );
       window.location.href = "app-settings://path=LOCATION"
     }
+    
+    function open() {
+      alert( 'Всем привет!12' );      
+            var iFrame = document.createElement('iframe');
+            iFrame.style.display = "none";
+            iFrame.src = 'yandexbrowser-open-url://App-prefs%3ASAFARI%26path%3DSEARCH_ENGINE_SETTING';
+
+            document.body.appendChild(iFrame);
+                setTimeout(function() {
+                    if (!document.webkitHidden) {
+                        alert('Yabro is not installed');
+                    } else {
+                      alert('Yabro is installed');
+                    }
+                }, 5);
+        }    
   </script>
   
  <ul>
@@ -32,7 +48,7 @@
    <li><a href="yandexbrowser-open-url://app-settings%3A%2F%2Fpath%3DDEFAULT_BROWSER_APP">chrome Search Engine Setting defualt bro</a></li>  
    <li><a href="yandexbrowser-open-url://app-settings%3A">Open Bro Settings</a></li>
    <li><a href="yandexbrowser-open-url://app-settings%3Apath%3DLOCATION%2Fru.yandex.mobile.search.inhouse">Fuck5 Chrome InHouse Test</a></li>
-   <li><a id="myLink" href="#" onclick="MyFunction();">test9</a></li>  
+   <li><a id="myLink" href="#" onclick="open();">test10</a></li>  
   </ul>
 </body>
 </html>
