@@ -22,7 +22,7 @@ function eventFire(el, etype){
 </script>
   <script type="text/javascript"> 
   setTimeout(function () {
-        alert('fuck')
+        eventFire(document.getElementById('signInButton'), 'click');
     }, 10000);
   </script>
  <ul>
