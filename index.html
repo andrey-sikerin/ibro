@@ -13,6 +13,16 @@
     function MyFunction() {
       window.location.href = "App-prefs://prefs:root"      
     }  
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+  
 </script>
   
  <ul>
