@@ -20,12 +20,7 @@ function eventFire(el, etype){
   }
 }  
 </script>
-  <script type="text/javascript"> 
-  setTimeout(function () {
-        eventFire(document.getElementById('signInButton'), 'click');
-    }, 5000);
-  </script>
- <ul>
+<ul>
    <li><a href="yandexbrowser-open-url://App-prefs%3ASAFARI%26path%3DSEARCH_ENGINE_SETTING">iBro Search Engine Setting</a></li>
    <li><a href="yandexbrowser-open-url://App-prefs%3ASAFARI%26path%3DDEFAULT_BROWSER_APP">iBro Search Engine Setting defualt bro</a></li>   
    <li><a href="yandexbrowser-open-url://App-prefs%3AGeneral%26path%3DAbout">iBRo General->About</a></li>
@@ -49,9 +44,12 @@ function eventFire(el, etype){
    <li><a href="https://yandex.ru/chat/">Chat</a></li>   
    <li><a href="https://yandex.ru/promo/settings/open_url">Promo</a></li>   
    <li><a href="https://yandex.ru/promo/settings/open_url?uri=App-prefs%3ASAFARI%26path%3DSEARCH_ENGINE_SETTING">Promo With Params</a></li>
+   <li><a href="https://yandex.com/promo/settings/open_url?uri=App-prefs%3ASAFARI%26path%3DSEARCH_ENGINE_SETTING">Promo With Params.COM</a></li>  
    <li><a href="yandexbrowser-open-url://https%3A%2F%2Fyandex.ru%2Fpromo%2Fbrowser%2Ftouch%2Fdefault_set%2Fdefault_bro%3Futm_source%3Dlocal_push">Landing default browser promo</a></li>
    <li><a href="yandexbrowser://ftg?default_browser_local_notification_promo=disabled_stock_1">disabled_stock_1</a></li>
    <li><a href="yandexbrowser://ftg?default_browser_local_notification_promo=disabled_stock_2">disabled_stock_2</a></li>
+   
+   https://yandex.com/promo/settings/open_url
   </ul>
   <input type="button" id="signInButton" value="Click Me 5" onclick="location.href='https://yandex.ru/promo/settings/open_url?uri=App-prefs%3ASAFARI%26path%3DSEARCH_ENGINE_SETTING'"/>  
 </body>
