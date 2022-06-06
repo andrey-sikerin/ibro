@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iOS blob</title>
+
+    <style>
+        .generated-images3 {
+            position: fixed;
+            left: -9999px;
+            top: -9999px;
+            width: 1px;
+            height: 1px;
+        }
+        .orig-images {
+            font-size: 0;
+        }
+
+        .log {
+            white-space: pre-wrap;
+        }
+
+        img {
+            min-height: 50px;
+            min-width: 50px;
+            max-width: 200px;
+            max-height: 200px;
+            background: #eee;
+            margin: 0 10px 10px 0;
+            border: 1px solid #888;
+        }
+
+        canvas {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h4>Click on image to download it</h4>
+
+<div class="orig-images" id="origImages">
+    <img src="https://ychef.files.bbci.co.uk/1600x900/p09c5d34.webp" crossorigin="anonymous">
+    <img src="https://i.imgur.com/WzAyY62.jpeg" crossorigin="anonymous">
+    <img src="https://i.imgur.com/MNFL28J.jpeg" crossorigin="anonymous">
+    <img src="https://i.imgur.com/V2Ohnhq.jpeg" crossorigin="anonymous">
+    <img src="https://i.imgur.com/pRYGHs3.jpeg" crossorigin="anonymous">
+</div>
+
+<p>Предпоследние изображение работает без фикса csp</p>
+
+<h4>Log</h4>
+
+<div class="log" id="log"></div>
+
+<script>
+    const $log = document.querySelector('#log');
+
+    const $a = document.createElement('a');
+    document.body.appendChild($a);
+
+    window.log = (log) => {
+        const d = new Date();
+        $log.innerHTML += '[' + d.toLocaleTimeString() + '] ' + log + "\n";
+    };
+
+    const downloadImg = ($img) => {
+        const $cnv = document.createElement('canvas');
+        $cnv.width = 190;
+        $cnv.height = 190;
+        const ctx = $cnv.getContext('2d');
+
+        try {
+            ctx.drawImage($img, 0, 0, 200, 200);
+        } catch (e) {
+            return log('<b>Error draw on canvas</b>' + e.message)
+        }
+
+        try {
+            ctx.getImageData(0, 0, 1, 1);
+            log('<b>Successfully drawn</b>');
+        } catch (e) {
+            return log('<b>Canvas reading error</b>: ' + e.message)
+        }
+
+        $cnv.toBlob(function(blob) {
+            log('<b>Downloading blob</b>');
+
+            $a.href = URL.createObjectURL(blob);
+            $a.download = $img.src;
+
+            $a.click();
+            log('<b>Process done</b>');
+        });
+    }
+
+    document.getElementById('origImages').addEventListener('click', ({ target: $img }) => {
+        if (!$img.src) return;
+
+        log($img.src);
+
+        downloadImg($img);
+    })
+
+    log('Call window.log("string") to print in log');
+</script>
+
+</body>
+</html>
